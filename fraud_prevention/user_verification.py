@@ -17,16 +17,14 @@ def verify_otp(otp, secret):
         print("Invalid OTP.")
         return False
 
-# Example for facial recognition (biometric verification)
 def verify_face():
-    # Initialize the camera
+    
     cap = cv2.VideoCapture(0)
 
-    # Capture a frame
+    
     ret, frame = cap.read()
 
-    # Perform facial recognition (simplified for example)
-    # Here, you would compare the captured frame with a stored reference
+    
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
     faces = face_cascade.detectMultiScale(frame, 1.1, 4)
 
@@ -39,7 +37,7 @@ def verify_face():
 
     cap.release()
 
-# Example usage
+
 secret = "JBSWY3DPEHPK3PXP"
 otp = generate_otp(secret)
 verify_otp(otp, secret)
