@@ -3,17 +3,13 @@ import pandas as pd
 import sys, os
 import logging
 
-# Adding parent directory to the path so that config can be imported
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# Import fraud threshold from config.py
 from config import FRAUD_SCORE_THRESHOLD  
 
-# Setup logging for better tracking in production
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Load the pre-trained model (ensure the path is correct)
 model = joblib.load("model/models/xgboost_model.pkl")
 
 def apply_dynamic_rules(transaction_data):
@@ -22,15 +18,13 @@ def apply_dynamic_rules(transaction_data):
     """
     dynamic_threshold = FRAUD_SCORE_THRESHOLD
     
-    # Example rule: Lower the threshold for international transactions
     if transaction_data['is_international'].iloc[0] == 1:
-        dynamic_threshold -= 0.1  # Lower threshold for international transactions
-    
-    # Example rule: Higher threshold for VIP customers
+        dynamic_threshold -= 0.1  
+   
     if transaction_data['customer_category'].iloc[0] == 1:
-        dynamic_threshold += 0.1  # Raise threshold for VIP customers
+        dynamic_threshold += 0.1  
 
-    # Log the dynamic threshold
+    
     logger.info(f"Dynamic Fraud Score Threshold: {dynamic_threshold}")
 
     # Add more rules as needed (e.g., based on merchant category or transaction type)
@@ -76,13 +70,13 @@ new_transaction = pd.DataFrame([{
     'day_of_week': 4,  # Monday is 0, Tuesday is 1, ..., Sunday is 6
     'is_weekend': 0,
     'high_amount_flag': 1,
-    'transaction_type': 0,  # 0 = Online, 1 = POS (or whatever encoding you used)
-    'customer_category': 2,  # 0 = Regular, 1 = VIP, etc.
-    'merchant_category': 1,  # Fashion, Grocery, etc.
+    'transaction_type': 0, 
+    'customer_category': 2, 
+    'merchant_category': 1,  
     'card_type': 1  # 0 = Debit, 1 = Prepaid, etc.
 }])
 
-# Ensure the correct columns (matching the model's training features)
+
 expected_columns = [
     'amount', 'merchant_id', 'is_international', 'day_of_week', 
     'is_weekend', 'high_amount_flag', 'transaction_type', 
@@ -92,7 +86,7 @@ expected_columns = [
 # Reorder or ensure the features are aligned properly
 new_transaction = new_transaction[expected_columns]
 
-# Print the model's feature names to compare
+
 booster = model.get_booster()
 features = booster.feature_names
 logger.info("Model features: %s", features)
