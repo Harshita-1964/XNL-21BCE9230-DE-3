@@ -94,57 +94,5 @@ Unit tests for fraud detection can be found in `tests/test_fraud_detection.py`. 
 ```bash
 pytest tests/test_fraud_detection.py
 ```
-Directories
-data-pipeline/
-├── kafka_producer.py               # Kafka producer for real-time data streaming
-├── spark_streaming.py              # Spark Streaming for processing data in real-time
-├── config.py                       # Configuration file for managing settings
-├── requirements.txt                # Python dependencies for the project
-├── tests/
-│   └── test_fraud_detection.py     # Unit tests for fraud detection
-├── fraud_prevention/               # Folder for all fraud prevention-related scripts
-│   ├── real_time_fraud_prevention.py
-│   ├── fraud_alerting.py
-│   ├── user_verification.py
-│   ├── fraud_case_management_dashboard.py
-│   ├── config.py
-│   └── templates/
-│       └── index.html
-├── model/                           # Folder for machine learning models and related scripts
-│   ├── train_model.py
-│   ├── train_tf_model.py
-│   ├── inference/
-│   ├── explainability/
-│   └── models/
-├── data/                           # Folder for storing data files
-│   ├── transactions.csv
-│   └── features.csv
-├── storage_security/               # Folder for data storage & security
-│   ├── cassandra_storage.py
-│   ├── postgres_storage.py
-│   ├── bigquery_storage.py
-│   ├── encryption.py
-│   ├── role_based_access.py
-│   └── compliance.py
-├── visualization_dashboard/        # New folder for visualization and dashboard
-│   ├── frontend/                   # React.js/Next.js frontend
-│   │    ├── public/                # Static assets like images, icons
-│   │    ├── src/                   # React components and pages
-│   │    └── package.json           # NPM dependencies for React app
-│   ├── backend/                    # Backend API to serve data to the frontend
-│   │    ├── fraud_dashboard_api.py  # Python API to fetch fraud data and insights
-│   │    └── config.py              # Backend configuration file
-│   ├── superset_integration.py     # Integration with Apache Superset for reporting
-│   └── metabase_integration.py     # Integration with Metabase for reporting
-├── ci_cd_testing_deployment/       # New folder for CI/CD, testing, and deployment
-│   ├── tests/                      # Unit & integration tests for fraud detection
-│   │    └── test_fraud_detection.py
-│   ├── performance_testing/        # Performance testing using Locust or K6
-│   │    └── locustfile.py          # Locust script for simulating transactions
-│   ├── ci_cd_pipeline/             # CI/CD pipeline configuration
-│   │    ├── github_actions.yml     # GitHub Actions CI/CD pipeline
-│   │    ├── dockerfile             # Dockerfile for the app container
-│   │    └── terraform.tf           # Terraform configuration for deployment
-│   └── ab_testing/                 # Folder for A/B testing scripts
-│        ├── ab_test.py             # A/B testing script for fraud models
-│        └── ab_test_results.py     # Script for analyzing A/B test results
+![image](https://github.com/user-attachments/assets/206f8e5c-2477-443a-9d93-23f2c1157007)
+
