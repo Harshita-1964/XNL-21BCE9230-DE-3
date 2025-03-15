@@ -1,6 +1,4 @@
-Here’s a basic README script you can use for your GitHub repository:
 
----
 
 # Real-Time Fraud Detection Pipeline
 
