@@ -95,18 +95,3 @@ Unit tests for fraud detection can be found in `tests/test_fraud_detection.py`. 
 pytest tests/test_fraud_detection.py
 ```
 
-## Deployment
-
-To deploy the system, follow the instructions in the CI/CD section. Use Terraform and GitHub Actions for automated deployment and management.
-
-## Contributing
-
-Contributions are welcome! Feel free to open issues or submit pull requests to improve the system.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-This should give a comprehensive overview of the project for anyone reviewing or contributing to your GitHub repository.
