@@ -1,0 +1,12 @@
+pandas
+xgboost
+lightgbm
+scikit-learn
+joblib
+shap
+lime
+torch
+fastapi
+uvicorn
+tensorflow
+requests
