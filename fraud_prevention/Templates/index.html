@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Case Dashboard</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fraud Case Management</h1>
+    <table>
+        <tr>
+            <th>Transaction ID</th>
+            <th>Fraud Score</th>
+            <th>Status</th>
+        </tr>
+        {% for case in fraud_cases %}
+        <tr>
+            <td>{{ case.transaction_id }}</td>
+            <td>{{ case.fraud_score }}</td>
+            <td>{{ case.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
